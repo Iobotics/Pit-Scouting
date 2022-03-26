@@ -163,19 +163,10 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "If climb failed,<br>Last successful rung,<br>if any": {
-        "code":"lsr",
-        "title": "If climb failed,<br>last successful rung,<br>if any",
-        "type":"radio",
-        "choices":{
-          "1":"Low<br>",
-          "2":"Mid<br>",
-          "3":"High<br>",
-          "4":"Traversal<br>",
-          "n":"No successful rung<br>",
-          "x":"n/a"
-        },
-        "defaultValue":"x"
+      "Climb level(if failed, put last level that was successful)": {
+        "code":"cl",
+        "title":"Climb level",
+        "type":"counter"
       },
       "Started Climb before Endgame": {
         "code":"be",
@@ -238,7 +229,7 @@ var config_data = `
           "n":"Not Confident"
       },
        "defaultValue":"a"
-    }
+      }
     }
   }
 }`;
