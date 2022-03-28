@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "title":"Scouting PASS 2022",
+  "title":"Pit Scouting PASS 2022",
   "page_title":"Rapid React",
   "elements":{
     "prematch": {
@@ -18,44 +18,22 @@ var config_data = `
         "required":"true",
         "disabled":"true"
       },
-      "Match Level":{
-        "code":"l",
-        "type":"level",
-        "choices":{
-          "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
-        },
-        "defaultValue":"qm",
-        "required":"true"
-      },
-      "Match #":{
-        "code":"m",
-        "type":"match",
-        "min":1,
-        "max":100,
-        "required":"true"
-      },
-     "Robot": {
-        "code":"r",
-        "type":"robot",
-        "choices":{
-          "r1":"Red-1",
-          "b1":"Blue-1<br>",
-          "r2":"Red-2",
-          "b2":"Blue-2<br>",
-          "r3":"Red-3",
-          "b3":"Blue-3"
-        },
-        "required":"true"
-      },
+      
       "Team #": {
         "code":"t",
         "type":"team",
         "min":1,
         "max":99999
+      },
+      "Width":{
+        "code": "rw",
+        "title": "robot width(in)",
+        "type": "counter"
+      },
+      "Length":{
+        "code": "rw",
+        "title": "robot length(in)",
+        "type": "counter"
       },
       "Auto Start Position": {
         "code":"as",
@@ -65,14 +43,19 @@ var config_data = `
       }
     },
     "auton": {
+      "Number of autos":{
+      "code":"na",
+      "title": "How many auto paths?",
+      "type":"counter"
+      },
       "Taxi": {
         "code":"at",
-        "title": "Taxied?",
+        "title": "Can they taxi?",
         "type":"bool"
       },
       "Upper Cargo Scored": {
         "code":"au",
-        "title": "Uppoer Cargo Scored",
+        "title": "Upper Cargo Scored",
         "type":"counter"
       },
       "Lower Cargo Scored": {
@@ -82,47 +65,8 @@ var config_data = `
       },
       "Auto Aquired Cargo": {
         "code":"ac",
-        "title": "Picked up more cargo?",
-        "type":"bool"
-      }
-    },
-    "teleop": {
-      "Cargo Intake": {
-        "code":"ci",
-        "title": "Cargo Intaken",
+        "title": "How many cargo aquired?",
         "type":"counter"
-      },
-      "Upper Cargo Scored": {
-        "code":"tu",
-        "title": "Uppoer Cargo Scored",
-        "type":"counter"
-      },
-      "Lower Cargo Scored": {
-        "code":"tl",
-        "title": "Lower Cargo Scored",
-        "type":"counter"
-      },
-      "Was Defended": {
-        "code":"wd",
-        "title": "Was Defended",
-        "type":"bool"
-      },
-      "Defense Rating": {
-        "code":"dr",
-        "title": "Defense Rating",
-        "type":"radio",
-        "choices":{
-          "n":"Not Effective<br>",
-          "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Not Observed"
-        },
-        "defaultValue":"x"
-      },
-      "Wallbot?": {
-        "code":"wbt",
-        "title": "Wallbot?",
-        "type":"bool"
       },
       "Cargo Intake From": {
         "code":"cif",
@@ -136,11 +80,41 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Climb Initial Time": {
-        "code":"ct",
-        "title":"Time Left",
-        "type":"text"
-    },   
+    },
+    "teleop": {
+      "Cargo Intake": {
+        "code":"ci",
+        "title": "Cargo Intaken",
+        "type":"radio"
+        "choices":{
+          "t":"Terminal<br>",
+          "g":"Ground<br>",
+          "b":"Both<br>",
+          "x":"Not Attempted"
+        },
+        "defaultValue": "x"
+      },
+      "Upper Cargo Scored": {
+        "code":"tu",
+        "title": "Approximat Upper Cargo Scored",
+        "type":"counter"
+      },
+      "Lower Cargo Scored": {
+        "code":"tl",
+        "title": "Approximate Lower Cargo Scored",
+        "type":"counter"
+      },
+      "Defense Rating": {
+        "code":"dr",
+        "title": "Defense?",
+        "type":"bool"
+      },
+      "Wallbot?": {
+        "code":"wbt",
+        "title": "Wallbot?",
+        "type":"bool"
+      },
+         
       "Shooting Spot": {
         "code":"ss",
         "title": "Shooting Spot",
@@ -148,7 +122,12 @@ var config_data = `
         "filename":"2022/field_image.png"
       }
     },
-    "endgame": {     
+    "endgame": {  
+      "Climb Time": {
+        "code":"ct",
+        "title":"How long it takes to climb?",
+        "type":"counter"
+      },   
       "Climb": {
         "code":"c",
         "title": "Climb",
@@ -158,25 +137,15 @@ var config_data = `
           "2":"Mid<br>",
           "3":"High<br>",
           "4":"Traversal<br>",
-          "a":"Attempted but failed<br>",
-          "x":"Not attempted"
+          "x":"Don't Climb"
         },
         "defaultValue":"x"
       },
-      "Climb level(if failed, put last level that was successful)": {
-        "code":"cl",
-        "title":"Climb level",
-        "type":"counter"
-      },
-      "Started Climb before Endgame": {
-        "code":"be",
-        "title": "Started climb before EndGame",
-        "type":"bool"
-      },
-      "Num of Robots Climbed": {
+     
+      "Climb with others": {
         "code":"cn",
-        "title": "# of alliance bots climbed",
-        "type":"counter"
+        "title": "Can they climb with others?",
+        "type":"bool"
       }
     },
     "postmatch": {
@@ -192,25 +161,22 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Shot enemy balls away?": {
-        "code":"ba",
-        "title": "Shot enemy balls away?",
-        "type":"bool"
-      },
       "Died/Tipped": {
         "code":"d",
-        "title": "Died/Tipped",
-        "type":"bool"
-      },
-      "Card Foul": {
-        "code":"cf",
-        "title": "Yellow/Red Card",
+        "title": "Dying/Tipping issues?",
         "type":"bool"
       },
       "Make good alliance partner?": {
         "code":"all",
-        "title": "Make good alliance partner?",
+        "title": "Make good alliance partner?(easy to work with)",
         "type":"bool"
+      },
+      "Mechanical Issues": {
+        "code":"mi",
+        "title": "mechanical issues",
+        "type":"text",
+        "size":15,
+        "maxSize":50
       },
       "Comments": {
         "code":"co",
@@ -219,17 +185,6 @@ var config_data = `
         "size":15,
         "maxSize":50
       },
-      "Confidence Rating": {
-        "code":"cnf",
-        "title": "Confidence Rating",
-        "type":"radio",
-        "choices":{
-          "v":"Very Confident<br>",
-          "a":"Average<br>",
-          "n":"Not Confident"
-      },
-       "defaultValue":"a"
-      }
     }
   }
 }`;
