@@ -27,7 +27,7 @@ var config_data = `
       },
       "length":{
         "code":"rw",
-        "type":"length",
+        "type":"match",
         "title": "length",
         "min":1,
         "max":120,
@@ -90,7 +90,7 @@ var config_data = `
       },
       "Upper Cargo Scored": {
         "code":"tu",
-        "title": "Approximate Cargo Scored",
+        "title": "Approximate Upper Cargo Scored",
         "type":"counter"
       },
       "Lower Cargo Scored": {
@@ -98,22 +98,10 @@ var config_data = `
         "title": "Approximte Lower Cargo Scored",
         "type":"counter"
       },
-      "Was Defended": {
+      "Defense": {
         "code":"wd",
-        "title": "Was Defended",
+        "title": "Plays Defense",
         "type":"bool"
-      },
-      "Defense Rating": {
-        "code":"dr",
-        "title": "Defense Rating",
-        "type":"radio",
-        "choices":{
-          "n":"Not Effective<br>",
-          "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Not Observed"
-        },
-        "defaultValue":"x"
       },
       "Wallbot?": {
         "code":"wbt",
@@ -132,9 +120,9 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Climb Initial Time": {
+      "Climb time": {
         "code":"ct",
-        "title":"Time Left",
+        "title":"Time to climb",
         "type":"text"
     },   
       "Shooting Spot": {
@@ -156,9 +144,9 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Climb level(if failed, put last level that was successful)": {
+      "Climb level": {
         "code":"cl",
-        "title":"Climb level",
+        "title":"Possible Climb level",
         "type":"counter"
       },
       "Num of Robots Climbed": {
