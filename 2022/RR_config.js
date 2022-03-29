@@ -20,7 +20,23 @@ var config_data = `
       "Weight":{
         "code":"rw",
         "type":"match",
-        "title": "weight",
+        "title": "robot weight",
+        "min":1,
+        "max":120,
+        "required":"true"
+      },
+      "length":{
+        "code":"rw",
+        "type":"length",
+        "title": "length",
+        "min":1,
+        "max":120,
+        "required":"true"
+      },
+      "width":{
+        "code":"rw",
+        "type":"match",
+        "title": "width",
         "min":1,
         "max":120,
         "required":"true"
@@ -147,7 +163,7 @@ var config_data = `
       },
       "Num of Robots Climbed": {
         "code":"cn",
-        "title": "# of alliance bots climbed",
+        "title": "Can climb with other robots?",
         "type":"counter"
       }
     },
@@ -164,19 +180,9 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Shot enemy balls away?": {
-        "code":"ba",
-        "title": "Shot enemy balls away?",
-        "type":"bool"
-      },
       "Died/Tipped": {
         "code":"d",
-        "title": "Died/Tipped",
-        "type":"bool"
-      },
-      "Card Foul": {
-        "code":"cf",
-        "title": "Yellow/Red Card",
+        "title": "Mechanical issues?(Died/Tipped)",
         "type":"bool"
       },
       "Make good alliance partner?": {
@@ -190,17 +196,6 @@ var config_data = `
         "type":"text",
         "size":15,
         "maxSize":50
-      },
-      "Confidence Rating": {
-        "code":"cnf",
-        "title": "Confidence Rating",
-        "type":"radio",
-        "choices":{
-          "v":"Very Confident<br>",
-          "a":"Average<br>",
-          "n":"Not Confident"
-        },
-         "defaultValue":"a"
       }
     }
   }
