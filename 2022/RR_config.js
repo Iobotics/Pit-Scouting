@@ -18,44 +18,18 @@ var config_data = `
         "required":"true",
         "disabled":"true"
       },
-      "Match Level":{
-        "code":"l",
-        "type":"level",
-        "choices":{
-          "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
-        },
-        "defaultValue":"qm",
-        "required":"true"
-      },
-      "Match #":{
-        "code":"m",
-        "type":"match",
-        "min":1,
-        "max":100,
-        "required":"true"
-      },
-     "Robot": {
-        "code":"r",
-        "type":"robot",
-        "choices":{
-          "r1":"Red-1",
-          "b1":"Blue-1<br>",
-          "r2":"Red-2",
-          "b2":"Blue-2<br>",
-          "r3":"Red-3",
-          "b3":"Blue-3"
-        },
-        "required":"true"
-      },
       "Team #": {
         "code":"t",
         "type":"team",
         "min":1,
         "max":99999
+      },
+      "Weight":{
+        "code":"rw",
+        "type":"robot weight",
+        "min":1,
+        "max":120,
+        "required":"true"
       },
       "Auto Start Position": {
         "code":"as",
@@ -67,12 +41,12 @@ var config_data = `
     "auton": {
       "Taxi": {
         "code":"at",
-        "title": "Taxied?",
+        "title": "Can taxi??",
         "type":"bool"
       },
       "Upper Cargo Scored": {
         "code":"au",
-        "title": "Uppoer Cargo Scored",
+        "title": "Upper Cargo Scored",
         "type":"counter"
       },
       "Lower Cargo Scored": {
@@ -80,10 +54,22 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Auto Aquired Cargo": {
+      "Cargo Intake": {
         "code":"ac",
-        "title": "Picked up more cargo?",
+        "title": "Auto Intake",
         "type":"counter"
+      },
+      "Cargo Intake From": {
+        "code":"acf",
+        "title": "Cargo Intake From",
+        "type":"radio",
+        "choices":{
+          "t":"Terminal<br>",
+          "g":"Ground<br>",
+          "b":"Both<br>",
+          "x":"Not Attempted"
+        },
+        "defaultValue":"x"
       }
     },
     "teleop": {
@@ -94,12 +80,12 @@ var config_data = `
       },
       "Upper Cargo Scored": {
         "code":"tu",
-        "title": "Uppoer Cargo Scored",
+        "title": "Approximate Cargo Scored",
         "type":"counter"
       },
       "Lower Cargo Scored": {
         "code":"tl",
-        "title": "Lower Cargo Scored",
+        "title": "Approximte Lower Cargo Scored",
         "type":"counter"
       },
       "Was Defended": {
