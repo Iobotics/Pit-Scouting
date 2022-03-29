@@ -91,8 +91,13 @@ var config_data = `
     "auton": {
       "Taxi": {
         "code":"at",
-        "title": "Can taxi??",
+        "title": "Can they taxi?",
         "type":"bool"
+      },
+      "Number of autos":{
+      "code":"na",
+      "title": "How many auto paths?",
+      "type":"counter"
       },
       "Upper Cargo Scored": {
         "code":"au",
@@ -123,11 +128,6 @@ var config_data = `
       }
     },
     "teleop": {
-      "Cargo Intake": {
-        "code":"ci",
-        "title": "Cargo Intaken",
-        "type":"counter"
-      },
       "Upper Cargo Scored": {
         "code":"tu",
         "title": "Approximate Upper Cargo Scored",
@@ -138,7 +138,7 @@ var config_data = `
         "title": "Approximte Lower Cargo Scored",
         "type":"counter"
       },
-      "Defense": {
+      "Plays Defense": {
         "code":"wd",
         "title": "Plays Defense",
         "type":"bool"
@@ -173,22 +173,16 @@ var config_data = `
       }
     },
     "endgame": {     
-      "Climb": {
-        "code":"c",
-        "title": "Climb",
-        "type":"radio",
-        "choices":{
-          "s":"Successful<br>",
-          "a":"Attempted but failed<br>",
-          "x":"Not attempted"
-        },
-        "defaultValue":"x"
-      },
       "Climb level": {
         "code":"cl",
         "title":"Possible Climb level",
         "type":"counter"
       },
+      "Climb Time": {
+        "code":"ct",
+        "title":"How long it takes to climb?",
+        "type":"counter"
+      },   
       "Num of Robots Climbed": {
         "code":"cn",
         "title": "Can climb with other robots?",
@@ -217,6 +211,13 @@ var config_data = `
         "code":"all",
         "title": "Make good alliance partner?",
         "type":"bool"
+      },
+      "Mechanical Issues": {
+        "code":"mi",
+        "title": "mechanical issues",
+        "type":"text",
+        "size":15,
+        "maxSize":50
       },
       "Comments": {
         "code":"co",
