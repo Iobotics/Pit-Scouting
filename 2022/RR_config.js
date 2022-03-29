@@ -82,36 +82,6 @@ var config_data = `
         "max":120,
         "required":"true"
       },
-      "red 1?": {
-        "code":"ro",
-        "title": "red 1?",
-        "type":"bool"
-      },
-      "red 2?": {
-        "code":"rt",
-        "title": "red 2?",
-        "type":"bool"
-      },
-      "red 3?": {
-        "code":"rth",
-        "title": "red 3",
-        "type":"bool"
-      },
-      "red 4?": {
-        "code":"rf",
-        "title": "red 4?",
-        "type":"bool"
-      },
-      "red 5?": {
-        "code":"rfi",
-        "title": "red 5?",
-        "type":"bool"
-      },
-      "red 6?": {
-        "code":"rs",
-        "title": "red 6",
-        "type":"bool"
-      },
       "blue 1?": {
         "code":"bo",
         "title": "blue 1?",
