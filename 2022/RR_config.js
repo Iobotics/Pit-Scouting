@@ -82,7 +82,7 @@ var config_data = `
         "max":120,
         "required":"true"
       },
-      "Red 1": {
+      "red 1?": {
         "code":"ro",
         "title": "red 1?",
         "type":"bool"
@@ -97,7 +97,22 @@ var config_data = `
         "title": "red 3",
         "type":"bool"
       },
-      "blue 1": {
+      "red 4?": {
+        "code":"rf",
+        "title": "red 4?",
+        "type":"bool"
+      },
+      "red 5?": {
+        "code":"rfi",
+        "title": "red 5?",
+        "type":"bool"
+      },
+      "red 6?": {
+        "code":"rs",
+        "title": "red 6",
+        "type":"bool"
+      },
+      "blue 1?": {
         "code":"bo",
         "title": "blue 1?",
         "type":"bool"
@@ -110,6 +125,21 @@ var config_data = `
       "blue 3?": {
         "code":"bth",
         "title": "blue 3",
+        "type":"bool"
+      },
+      "blue 4?": {
+        "code":"bf",
+        "title": "blue 4?",
+        "type":"bool"
+      },
+      "blue 5?": {
+        "code":"bfi",
+        "title": "blue 5?",
+        "type":"bool"
+      },
+      "blue 6?": {
+        "code":"bs",
+        "title": "blue 6",
         "type":"bool"
       },
       "Auto Start Position": {
