@@ -26,7 +26,8 @@ var config_data = `
       },
       "Weight":{
         "code":"rw",
-        "type":"robot weight",
+        "type":"match",
+        "title": "weight",
         "min":1,
         "max":120,
         "required":"true"
