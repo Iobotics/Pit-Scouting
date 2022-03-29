@@ -38,6 +38,7 @@ var config_data = `
         "max":100,
         "required":"true"
       },
+      
      "Robot": {
         "code":"r",
         "type":"robot",
@@ -81,11 +82,41 @@ var config_data = `
         "max":120,
         "required":"true"
       },
+      "Red 1": {
+        "code":"ro",
+        "title": "red 1?",
+        "type":"bool"
+      },
+      "red 2?": {
+        "code":"rt",
+        "title": "red 2?",
+        "type":"bool"
+      },
+      "red 3?": {
+        "code":"rth",
+        "title": "red 3",
+        "type":"bool"
+      },
+      "blue 1": {
+        "code":"bo",
+        "title": "blue 1?",
+        "type":"bool"
+      },
+      "blue 2?": {
+        "code":"bt",
+        "title": "blue 2?",
+        "type":"bool"
+      },
+      "blue 3?": {
+        "code":"bth",
+        "title": "blue 3",
+        "type":"bool"
+      },
       "Auto Start Position": {
         "code":"as",
         "title": "Auto Start Position",
         "type":"field_image",
-        "filename":"2022/field_image.png"
+        "filename":"2022/auto_field.png"
       }
     },
     "auton": {
@@ -164,12 +195,6 @@ var config_data = `
         "code":"ct",
         "title":"Time to climb",
         "type":"text"
-    },   
-      "Shooting Spot": {
-        "code":"ss",
-        "title": "Shooting Spot",
-        "type":"field_image",
-        "filename":"2022/field_image.png"
       }
     },
     "endgame": {     
