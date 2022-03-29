@@ -13,9 +13,8 @@ var config_data = `
       },
       "Team #": {
         "code":"t",
-        "type":"team",
-        "min":1,
-        "max":99999
+        "type":"counter",
+        "title":"team number"
       },
       "Weight":{
         "code":"rw",
