@@ -59,7 +59,7 @@ var config_data = `
         "max":99999
       },
       "Weight":{
-        "code":"rw",
+        "code":"rm",
         "type":"match",
         "title": "robot weight",
         "min":1,
@@ -67,7 +67,7 @@ var config_data = `
         "required":"true"
       },
       "length":{
-        "code":"rw",
+        "code":"rl",
         "type":"match",
         "title": "length",
         "min":1,
