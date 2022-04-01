@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022cada",
+        "defaultValue":"2022hiho",
         "required":"true",
         "disabled":"true"
       },
@@ -203,11 +203,6 @@ var config_data = `
         "title":"Possible Climb level",
         "type":"counter"
       },
-      "Climb Time": {
-        "code":"ct",
-        "title":"How long it takes to climb?",
-        "type":"counter"
-      },   
       "Num of Robots Climbed": {
         "code":"cn",
         "title": "Can climb with other robots?",
